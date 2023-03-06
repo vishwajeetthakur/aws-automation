@@ -15,7 +15,6 @@ def get_random_password(password_length=16):
     return password
 
 
-
 def create_iam_user(iam, username, password=None, attach_policy= None):
     try: 
         iam.get_user(
@@ -56,6 +55,7 @@ def create_iam_user(iam, username, password=None, attach_policy= None):
         print("New exception")
         print(e)
 
+
 if __name__ == '__main__':
 
     iam = boto3.client('iam') 
@@ -67,8 +67,7 @@ if __name__ == '__main__':
     
 
     args = parser.parse_args()
-    # print("username : ", args.username)
-    # print("password : ", args.password)
+    
     if not any(vars(args).values()):
         parser.print_help()
         sys.exit()
